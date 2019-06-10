@@ -15,7 +15,7 @@ password:"you",
 ]
 
 function seedDB(){
-    Campground.deleteMany({},function(err){
+    Userbase.deleteMany({},function(err){
         if(err){
             console.log(err);
         }
