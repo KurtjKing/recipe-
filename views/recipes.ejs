@@ -1,0 +1,21 @@
+<% include includes/header%>
+
+<h1>Search for INGREDIANTS</h1>
+
+<form action="/results" method="GET">
+<input type="text" name="search" placeholder="ingred" id="foodIng" >
+<button onclick="callAPI(document.getElementById('foodIng').value)">Add</button>
+</form>
+
+<script>
+function add() {
+    var a = document.getElementById('foodIng').value;
+    return callAPI(a);
+}
+</script>
+
+
+
+
+
+<% include includes/footer%>

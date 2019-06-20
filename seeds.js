@@ -21,7 +21,7 @@ function seedDB(){
         }
         console.log("removed users");
         data.forEach(function(seed){
-            Campground.create(seed,function(err,campground){
+            Userbase.create(seed,function(err,campground){
                 if(err){
                     console.log(err);
                 }else{
