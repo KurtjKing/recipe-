@@ -36,7 +36,20 @@ seedDB();
 
 var PORT = process.env.PORT || 3000;
 
-
+// api call 
+function callAPI(ingredient){
+  unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=5&ranking=1&ignorePantry=false&ingredients=" + ingredient)
+  .header("X-RapidAPI-Host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com")
+  .header("X-RapidAPI-Key", "61fd52a739msh29c7937578d62b1p1a8f1ejsn2dc0b75d0a7b")
+  .end(function (result) {
+    var jsonData = result.body;
+    for(var i = 0; i < jsonData.length; i++) {
+      var obj = jsonData[i];
+      console.log(obj.title);
+      console.log(obj.image);
+    }
+    });
+  }
 
   
 
